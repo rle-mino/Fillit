@@ -3,33 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: glarivie <glarivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2015/12/09 17:45:10 by rle-mino         ###   ########.fr        #
+#    Created: 2015/09/16 14:27:46 by glarivie          #+#    #+#              #
+#    Updated: 2015/12/03 10:24:16 by glarivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fillit
+NAME 	= tetri-gen
+SRCS 	= srcs/main.c	srcs/ft_blk_rot.c	srcs/ft_rand.c	srcs/ft_atoi.c	\
+		  srcs/ft_isdigit.c		srcs/ft_isspace.c	\
 
-SRC = 		main.c			\
-			file_to_line.c	\
-			gridchecker.c	\
-			lenfile.c		\
-			linkchecker.c	\
-			openfile.c		\
-			poschecker.c	\
-			precheck.c		\
-			wrongchar.c
+INC		= ./includes
+FLAGS	= -Wall -Wextra -Werror
+CC		= gcc
 
-LIB =		libft.a
-
-all : $(NAME)
+all: $(NAME)
 
 $(NAME):
-	gcc -o $(NAME) $(SRC) $(LIB)
+	@echo ""
+	@$(CC) $(FLAGS) -o $(NAME) $(SRCS) -I$(INC)
+	@echo "Création de $(NAME)"
 
 clean:
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
-re : clean all
+re: clean all

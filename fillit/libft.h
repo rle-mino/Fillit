@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/03 15:57:37 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/09 17:17:00 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include "libft.h"
 
 typedef struct		s_list
 {
