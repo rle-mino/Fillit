@@ -1,0 +1,28 @@
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
+./tetri-gen -i -f 2
+./a.out sample.fillit | grep "Valid" -A10
+rm sample.fillit
