@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_twod.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 09:51:44 by rle-mino         ###   ########.fr       */
+/*   Created: 2015/12/10 11:43:18 by rle-mino          #+#    #+#             */
+/*   Updated: 2015/12/10 12:21:20 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+void			free_twod(char **str, int i)
 {
-	int		fd;
-	char	*line;
-	size_t	linesize;
+	int		j;
 
-	fd = openfile(argv[1]);
-	if (fd < 1)
-		return (0);
-	linesize = lenfile(fd);
-	printf("size: %lu\n", linesize);
-	fd = openfile(argv[1]);
-	line = file_to_line(linesize, fd);
-	printf("%s", line);
-	if (precheck(line) == 0)
-		return (0);
-	printf("Valid !\n");
-	fillit(line);
+	j = 0;
+	if (str == NULL || *str == NULL || i == 0)
+		return ;
+	while (str[j])
+	{
+		free(str[j]);
+		j++;
+	}
+	free(str);
 }

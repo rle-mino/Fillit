@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   minsize.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 09:51:44 by rle-mino         ###   ########.fr       */
+/*   Created: 2015/12/10 09:59:33 by rle-mino          #+#    #+#             */
+/*   Updated: 2015/12/10 10:31:15 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+int			minsize(char *str)
 {
-	int		fd;
-	char	*line;
-	size_t	linesize;
+	int		i;
+	int		j;
+	int		k;
 
-	fd = openfile(argv[1]);
-	if (fd < 1)
-		return (0);
-	linesize = lenfile(fd);
-	printf("size: %lu\n", linesize);
-	fd = openfile(argv[1]);
-	line = file_to_line(linesize, fd);
-	printf("%s", line);
-	if (precheck(line) == 0)
-		return (0);
-	printf("Valid !\n");
-	fillit(line);
+	j = 0;
+	k = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '#')
+			j++;
+		i++;
+	}
+	while (k * k < j)
+		k++;
+	return (k);
 }

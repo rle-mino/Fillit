@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   twod.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 09:51:44 by rle-mino         ###   ########.fr       */
+/*   Created: 2015/12/10 10:57:14 by rle-mino          #+#    #+#             */
+/*   Updated: 2015/12/10 11:42:52 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+char		**twod(int i)
 {
-	int		fd;
-	char	*line;
-	size_t	linesize;
+	char		**tab;
+	int			j;
 
-	fd = openfile(argv[1]);
-	if (fd < 1)
-		return (0);
-	linesize = lenfile(fd);
-	printf("size: %lu\n", linesize);
-	fd = openfile(argv[1]);
-	line = file_to_line(linesize, fd);
-	printf("%s", line);
-	if (precheck(line) == 0)
-		return (0);
-	printf("Valid !\n");
-	fillit(line);
+	j = 0;
+	*tab = ft_memalloc(sizeof(char *) * i);
+	if (!tab)
+		return (NULL);
+	while (tab[j])
+	{
+		tab[j] = ft_memalloc(sizeof(char *) * i);
+		if (tab[j])
+			return (NULL);
+		j++;
+	}
+	return(tab);
 }
