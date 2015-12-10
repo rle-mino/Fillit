@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 17:08:59 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/09 17:52:04 by rle-mino         ###   ########.fr       */
+/*   Updated: 2015/12/10 16:41:10 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 int		gridchecker(char *str, int i, int x, int y)
 {
-	printf("%lu\n", ft_strlen(str));
 	if (wrongchar(str[ft_strlen(str) - 2]) == 0)
+	{
 		return (0);
+	}
 	while (str[i])
 	{
 		x = i;
@@ -28,13 +29,17 @@ int		gridchecker(char *str, int i, int x, int y)
 			x++;
 		}
 		if (str[x] != '\n')
+		{
 			return (0);
+		}
 		i += 5;
 		y++;
 		if (y == 4)
 		{
 			if (str[i] != '\n' && str[i])
+			{
 				return (0);
+			}
 			y = 0;
 			i++;
 		}

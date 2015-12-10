@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/10 12:21:15 by rle-mino         ###   ########.fr       */
+/*   Updated: 2015/12/10 15:52:31 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int			poschecker(char *str, size_t i, int x, int y);
 void		fillit(char *str);
 int			minsize(char *str);
 char		**twod(int i);
-int			f_check(char *str, char **tab);
-int			drop(char *str, char **tab);
 void		free_twod(char **tab,int i);
+void		fillit(char *str);
+int			f_check(char *str, char **tab);
+char		**drop(char *str, char **tab);
+int			nb_piece(char *str);
 
 #endif

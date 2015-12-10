@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2015/12/09 17:45:10 by rle-mino         ###   ########.fr        #
+#    Updated: 2015/12/10 17:34:47 by mdiarra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC = 		main.c			\
 			openfile.c		\
 			poschecker.c	\
 			precheck.c		\
-			wrongchar.c
+			wrongchar.c		\
+			nb_piece.c
 
 LIB =		libft.a
 

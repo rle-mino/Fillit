@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:26:53 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/09 17:48:45 by rle-mino         ###   ########.fr       */
+/*   Updated: 2015/12/10 16:40:33 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int		poschecker(char *str, size_t i, int x, int y)
 		if (y == 4)
 		{
 			if (nb != 4)
+			{
 				return (0);
+			}
 			i++;
 			y = 0;
 			nb = 0;
@@ -33,7 +35,6 @@ int		poschecker(char *str, size_t i, int x, int y)
 			nb++;
 			if (linkchecker(str, i, nb) == 0)
 			{
-				printf("Faux en %lu !\n", i);
 				return (0);
 			}
 		}
@@ -41,7 +42,5 @@ int		poschecker(char *str, size_t i, int x, int y)
 			y++;
 		i++;
 	}
-	printf("y = %i\n", y);
-	printf("nb = %i\n", nb);
 	return (1);
 }

@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linkchecker.c                                      :+:      :+:    :+:   */
+/*   nb_piece.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 17:25:33 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 16:40:14 by mdiarra          ###   ########.fr       */
+/*   Created: 2015/12/10 13:25:03 by mdiarra           #+#    #+#             */
+/*   Updated: 2015/12/10 16:43:59 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "fillit.h"
 
-int		linkchecker(char *str, int i, int nb)
+int			nb_piece(char *str)
 {
-	if (nb < 4)
+	int		i;
+	int		res;
+	int		nb;
+
+	i = 0;
+	res = 0;
+	while (str[i])
 	{
-		if (str[i + 1] != '#' && str[i + 5] != '#')
+		if (nb == 4)
 		{
-			while (str[i - 1] == '#')
-			{
-				if (str[i + 4] == '#')
-					return (1);
-				i--;
-			}
-			return (0);
+			res++;
+			nb = 0;
 		}
+		else if (str[i] == '#')
+		{
+			str[i] = 'A'+ res;
+			nb++;
+			i++;
+		}
+		else
+			i++;
 	}
-//	else if (nb > 4)
-//		return (0);
-	return (1);
+	return (res);
 }

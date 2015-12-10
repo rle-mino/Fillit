@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:20:36 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/09 17:50:31 by rle-mino         ###   ########.fr       */
+/*   Updated: 2015/12/10 17:49:20 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		openfile(const char *path)
 {
-	return (open(path, O_RDWR));
+	return (open(path, O_RDONLY));
 }
