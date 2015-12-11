@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 13:25:03 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/10 16:43:59 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/11 11:43:59 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int			nb_piece(char *str)
 
 	i = 0;
 	res = 0;
+	nb = 0;
 	while (str[i])
 	{
 		if (nb == 4)
@@ -28,7 +29,7 @@ int			nb_piece(char *str)
 			res++;
 			nb = 0;
 		}
-		else if (str[i] == '#')
+		if (str[i] == '#')
 		{
 			str[i] = 'A'+ res;
 			nb++;

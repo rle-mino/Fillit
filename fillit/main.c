@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 17:59:26 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/11 11:45:06 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int		main(int argc, char **argv)
 		return (0);
 	i = nb_piece(line);
 	printf("%s\n", line);
-	//fillit(line);
+	fillit(line);
 }
