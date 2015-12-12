@@ -6,12 +6,11 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/11 11:45:06 by rle-mino         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:15:49 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 int		main(int argc, char **argv)
 {
@@ -32,5 +31,5 @@ int		main(int argc, char **argv)
 		return (0);
 	i = nb_piece(line);
 	printf("%s\n", line);
-	fillit(line);
+	fillit(line, i);
 }

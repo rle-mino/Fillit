@@ -6,12 +6,11 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 17:08:59 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/10 16:41:10 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/12 12:15:37 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 int		gridchecker(char *str, int i, int x, int y)
 {

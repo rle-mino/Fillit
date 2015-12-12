@@ -1,45 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   poschecker.c                                       :+:      :+:    :+:   */
+/*   drop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 17:26:53 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/12 12:16:03 by rle-mino         ###   ########.fr       */
+/*   Created: 2015/12/12 12:13:41 by rle-mino          #+#    #+#             */
+/*   Updated: 2015/12/12 14:43:54 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		poschecker(char *str, size_t i, int x, int y)
+int			drop(char *result, const char *str)
 {
-	int	nb;
+	int 	i;
+	int		j;
 
-	nb = 0;
-	while (i < ft_strlen(str) + 1)
+	j = 0;
+	i = 0;
+	while (i < 21)
 	{
-		if (y == 4)
-		{
-			if (nb != 4)
-			{
-				return (0);
-			}
+		while ((str[i] == '.' || str[i] == '\n') && str[i])
 			i++;
-			y = 0;
-			nb = 0;
-		}
-		if (str[i] == '#')
+		while (str[i] >= 'A' && str[i] <= 'Z' && str[i])
 		{
-			nb++;
-			if (linkchecker(str, i, nb) == 0)
-			{
-				return (0);
-			}
+			result[i] = str[i];
+			i++;
 		}
-		if (str[i] == '\n')
-			y++;
-		i++;
 	}
-	return (1);
+	return (0);
 }

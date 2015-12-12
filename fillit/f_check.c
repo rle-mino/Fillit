@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   poschecker.c                                       :+:      :+:    :+:   */
+/*   f_check.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 17:26:53 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/12 12:16:03 by rle-mino         ###   ########.fr       */
+/*   Created: 2015/12/11 11:52:09 by rle-mino          #+#    #+#             */
+/*   Updated: 2015/12/12 12:15:32 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		poschecker(char *str, size_t i, int x, int y)
+int			f_check(char *result, int k)
 {
-	int	nb;
+	int		i;
+	int		j;
 
-	nb = 0;
-	while (i < ft_strlen(str) + 1)
+	j = ft_strlen(result) - 1;
+	i = k;
+	while (result[j])
 	{
-		if (y == 4)
-		{
-			if (nb != 4)
-			{
-				return (0);
-			}
-			i++;
-			y = 0;
-			nb = 0;
-		}
-		if (str[i] == '#')
-		{
-			nb++;
-			if (linkchecker(str, i, nb) == 0)
-			{
-				return (0);
-			}
-		}
-		if (str[i] == '\n')
-			y++;
-		i++;
+		if (result[j] >= 'A' || result[j] <= ('A' + k))
+			i--;
+		j--;
 	}
-	return (1);
+	if (i == (- 1))
+		return (1);
+	return (0);
 }

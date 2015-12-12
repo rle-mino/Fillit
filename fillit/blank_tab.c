@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_piece.c                                         :+:      :+:    :+:   */
+/*   blank_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 13:25:03 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/12 12:15:59 by rle-mino         ###   ########.fr       */
+/*   Created: 2015/12/11 13:33:51 by mdiarra           #+#    #+#             */
+/*   Updated: 2015/12/12 16:42:48 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int			nb_piece(char *str)
+char		*blank_tab(int size)
 {
-	int		i;
-	int		res;
-	int		nb;
+	char	*str;
+	int		k;
 
-	i = 0;
-	res = 0;
-	nb = 0;
-	while (str[i])
+	k = 0;
+	str = ft_strnew(size * (size + 1));
+	while (k < (size * (size + 1)))
 	{
-		if (nb == 4)
-		{
-			res++;
-			nb = 0;
-		}
-		if (str[i] == '#')
-		{
-			str[i] = 'A'+ res;
-			nb++;
-			i++;
-		}
+		if (((k + 1) % (size + 1)) == 0)
+			str[k] = '\n';
 		else
-			i++;
+			str[k] = '.';
+		k++;
 	}
-	return (res);
+	return (str);
 }

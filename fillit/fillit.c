@@ -6,26 +6,25 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 09:44:41 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 12:22:08 by rle-mino         ###   ########.fr       */
+/*   Updated: 2015/12/12 16:50:49 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
-void		fillit(char *str)
+void		fillit(char *str, int k)
 {
-	char		**tab;
-	int			i;
-	int			j;
+	char	*result;
+	int		i;
 
-	j = 0;
-	i = minsize(str);
-	while (f_check(str, tab) == 0)
-	{
-		tab = twod(i);
-		if ((drop(str, tab)) == 0)
-			free_twod(tab, i);
-		i++;
-	}
+	i = 2;
+	result = blank_tab(i);
+	while (f_check(result, k) == 0)
+		if (drop(result, str) == 0)
+		{
+			free(result);
+			i++;
+			result = blank_tab(i);
+		}
+	ft_putstr(result);
 }
