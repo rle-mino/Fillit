@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2015/12/12 10:59:20 by rle-mino         ###   ########.fr        #
+#    Updated: 2015/12/12 17:00:16 by rle-mino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ SRC = 		main.c			\
 			wrongchar.c		\
 			nb_piece.c		\
 			fillit.c		\
+			blank_tab.c		\
+			f_check.c		\
+			drop.c			\
 
 LIB =		libft.a
 
