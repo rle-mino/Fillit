@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2015/12/11 11:33:46 by rle-mino         ###   ########.fr        #
+#    Updated: 2015/12/15 18:26:44 by mdiarra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,12 @@ SRC = 		main.c			\
 			poschecker.c	\
 			precheck.c		\
 			wrongchar.c		\
-			nb_piece.c
+			nb_piece.c		\
+			fillblank.c		\
+			fillit.c		\
+			blank_tab.c		\
+			fill_struct.c	\
+			fill_tetri.c
 
 LIB =		libft.a
 
@@ -32,7 +37,7 @@ $(NAME):
 
 test: re
 	rm -rf sample.fillit
-	./tetri-gen -v -f 5
+	./tetri-gen -v -f 3
 	./fillit sample.fillit
 
 clean:

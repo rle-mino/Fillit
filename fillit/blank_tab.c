@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_piece.c                                         :+:      :+:    :+:   */
+/*   blank_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 13:25:03 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/11 18:23:39 by mdiarra          ###   ########.fr       */
+/*   Created: 2015/12/11 13:33:51 by mdiarra           #+#    #+#             */
+/*   Updated: 2015/12/14 12:50:46 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
+#include "libft.h"
 
-int			nb_piece(char *str)
+char	*blank_tab(int size, int i, int x, int y)
 {
-	int		i;
-	int		res;
-	int		nb;
+	char	*nutab;
 
-	nb = 0;
-	i = 0;
-	res = 0;
-	while (str[i])
+	nutab = ft_strnew(size * size);
+	while (y < size)
 	{
-		if (nb == 4)
+		while (x < size)
 		{
-			res++;
-			nb = 0;
+			nutab[i] = '.';
+			i++;
+			x++;
 		}
-		if (str[i] == '#')
+		if (x == size)
 		{
-			str[i] = 'A'+ res;
-			nb++;
+			nutab[i] = '\n';
+			y++;
 			i++;
+			x = 0;
 		}
-		else
-			i++;
 	}
-	return (res);
+	return(nutab);
 }

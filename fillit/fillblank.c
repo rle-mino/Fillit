@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_twod.c                                        :+:      :+:    :+:   */
+/*   fillblank.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 11:43:18 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/11 12:04:23 by mdiarra          ###   ########.fr       */
+/*   Created: 2015/12/11 13:18:04 by mdiarra           #+#    #+#             */
+/*   Updated: 2015/12/11 13:26:15 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include	"fillit.h"
+#include	"libft.h"
 
-void			free_twod(char **str)
+void		fillblank(char *tab, int size)
 {
-	int		j;
+	int		i;
 
-	j = 0;
-	if (str == NULL || *str == NULL)
-		return ;
-	while (str[j])
+	i = 0;
+	while(i < size)
 	{
-		free(str[j]);
-		j++;
+		tab[i] = '.';
+		i++;
 	}
-	free(str);
+	tab[size] = '\n';
+	printf("%s", tab);
 }
