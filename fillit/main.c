@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/11 18:27:39 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/16 14:27:37 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int		main(int argc, char **argv)
 	char	*line;
 	size_t	linesize;
 	int		nb;
-	t_list	*lst;
+	t_list	**lst;
 
-	lst = 0;
+	lst = NULL;
 	linesize = 0;
 	fd = openfile(argv[1]);
 	if (fd < 3)
@@ -33,5 +33,6 @@ int		main(int argc, char **argv)
 		return (0);
 	nb = nb_piece(line);
 	printf("%s, %i\n", line, nb);
-	fillit(line, nb, lst);
+	lst = list_it(line, nb);
+	fillit(lst, nb, line, 4);
 }

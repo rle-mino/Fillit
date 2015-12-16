@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:24:16 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/14 17:52:47 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/16 13:00:24 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ t_list		**blanklist(int nb)
 	return(blank);
 }
 
-t_list		**s_fill(char *str, int nb, t_list **blank, int i)
+void		s_fill(char *str, int nb, t_list **blank, int i)
 {
 	int		x;
 
@@ -104,5 +104,4 @@ t_list		**s_fill(char *str, int nb, t_list **blank, int i)
 		str = &str[x + 1];
 		x = 0;
 	}
-	return (blank);
 }

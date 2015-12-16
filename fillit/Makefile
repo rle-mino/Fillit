@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2015/12/15 18:26:44 by mdiarra          ###   ########.fr        #
+#    Updated: 2015/12/16 14:44:27 by mdiarra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME):
 
 test: re
 	rm -rf sample.fillit
-	./tetri-gen -v -f 3
+	./tetri-gen -v -f 5
 	./fillit sample.fillit
 
 clean:

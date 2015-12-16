@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:48:11 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/15 19:18:23 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/16 14:30:25 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ponderer(t_list *t, int size)
 	t_list	*b;
 	t_list	*test;
 
-	b = t;
 	test = t;
+	b = t;
 	i = 0;
 	while (t)
 	{
@@ -57,7 +57,7 @@ void	ponderer(t_list *t, int size)
 	}
 	while (test)
 	{
-//		printf("index: %i\n", test->index);
+		printf("index: %i\n", test->index);
 		test = test->next;
 	}
 }
@@ -70,8 +70,8 @@ int		placer(t_list *t, char *str, int size, int n)
 	i = 0;
 	bus = t;
 	printf("n = %i\n", n);
-	if (n > size * (size + 1))
-			return (0);
+	if (n > (size + 1) * size)
+			return (2);
 	while (bus)
 	{
 		if(str[n + bus->index] != '.')
@@ -102,7 +102,6 @@ char	*fill_tetri(t_list **t, int size, int nb, int b)
 	printf("size: %i\n", size);
 	while(i < nb)
 	{
-		ponderer(t[i], size);
 		printf("loop\n");
 		vld = placer(t[i], s, size, x);
 		printf("vld = %i\n", vld);
@@ -113,11 +112,9 @@ char	*fill_tetri(t_list **t, int size, int nb, int b)
 			i++;
 			x = 0;
 		}
+		else if (vld == 2 || x > (size + 1) * size)  /*limite atteinte */
+			return (NULL);
 	}
-	/*if (x > size * (size + 1))
-		s = fill_tetri(t, size + 1, nb, 0);*/
-	/*
-	if (vld == 2)  limite atteinte */
-		//s = fill_tetri(t, size, nb, b + 1); */
+	printf("%s", s);
 	return(s);
 }
