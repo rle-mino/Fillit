@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:48:11 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/16 14:30:25 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/20 19:17:56 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,6 @@ void	ponderer(t_list *t, int size)
 	i = 0;
 	while (t)
 	{
-		if (t->index == 3 && t->newline == 1)
-			while (b)
-			{
-				b->index += 2;
-				b = b->next;
-			}
-		else if ((t->index == 4 || t->index == 9) && t->newline == 1)
-			while (b)
-			{
-				(b)->index += 1;
-				b = (b)->next;
-			}
 		if (t->newline == 1)
 			i += (size - 4);
 		t->index = (t->index) + i;
@@ -57,33 +45,42 @@ void	ponderer(t_list *t, int size)
 	}
 	while (test)
 	{
-		printf("index: %i\n", test->index);
 		test = test->next;
 	}
 }
 
-int		placer(t_list *t, char *str, int size, int n)
+int		placer(t_list *t, char *str, int n)
 {
-	int		i;
 	t_list	*bus;
 
-	i = 0;
 	bus = t;
+	if (!str[n])
+	{
+		printf("%i erreur(n) \n", n);
+		return (2);
+	}
+	if (ft_strchr(str, t->c) != NULL)
+	{
+		printf("erreur(char) \n");
+		return (0);
+	}
 	printf("n = %i\n", n);
-	if (n > (size + 1) * size)
-			return (2);
 	while (bus)
 	{
-		if(str[n + bus->index] != '.')
+		if(str[n + bus->index] != '.' || !str[n + bus->index])
+		{
+			printf("faux\n");
 			return (0);
-		else
-			bus = bus->next;
+		}
+		bus = bus->next;
 	}
-	while (t)
+	bus = t;
+	while (bus)
 	{
-		str[n + t->index] = t->c;
-		t = t->next;
+		str[n + bus->index] = bus->c;
+		bus = bus->next;
 	}
+	printf("%c placee \n", bus->c);
 	return (1);
 }
 
@@ -93,26 +90,31 @@ char	*fill_tetri(t_list **t, int size, int nb, int b)
 	int		i;
 	int		vld;
 	int		x;
+	int		y;
 
 	s = blank_tab(size, 0, 0, 0);
 	i = 0;
 	vld = 0;
 	x = b;
-	//printf("b: %i\n", b);
-	printf("size: %i\n", size);
+	y = 0;
 	while(i < nb)
 	{
-		printf("loop\n");
-		vld = placer(t[i], s, size, x);
-		printf("vld = %i\n", vld);
-		if (vld == 0) /*piece non placee */
-			x++;
+		vld = placer(t[y], s, x);
+		printf("vld = %i \n", vld);
+		if (vld == 0 && t[y + 1])
+			y++;
 		else if (vld == 1) /* piece placee */
 		{
 			i++;
 			x = 0;
+			y = 0;
 		}
-		else if (vld == 2 || x > (size + 1) * size)  /*limite atteinte */
+		else if (vld == 3 || !t[y + 1])
+		{
+			y = 0;
+			x++;
+		}
+		else if (vld == 2)
 			return (NULL);
 	}
 	printf("%s", s);

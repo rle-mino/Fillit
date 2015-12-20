@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 09:44:41 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/16 14:46:05 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/19 18:09:40 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void		fillit(t_list **pieces, int nb, char *str, int size)
 		b++;
 	}
 	b = 0;
-	while ((tab = fill_tetri(cpy, size, nb, b)) == NULL && b < size)
+	while ((tab = fill_tetri(cpy, size, nb, b)) == NULL && b < (size + 1) * size)
 		b++;
-	if (b >= size)
+	if (b >= (size + 1) * size)
 		fillit(pieces, nb, str, size + 1);
 }
 		//	fill_tetri(tab, pieces, size, 0);
