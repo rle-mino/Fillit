@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/20 18:59:33 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/21 19:14:07 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int		main(int argc, char **argv)
 	nb = nb_piece(line);
 	printf("%s, %i\n", line, nb);
 	lst = list_it(line, nb);
-	fillit(lst, nb, line, 4);
+	fillit(lst, nb, line, 2);
 }

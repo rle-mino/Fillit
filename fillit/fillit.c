@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 09:44:41 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/21 15:52:19 by mdiarra          ###   ########.fr       */
+/*   Updated: 2015/12/21 20:11:02 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void		fillit(t_list **pieces, int nb, char *str, int size)
 	cpy = list_it(str, nb);
 	tab = NULL;
 		printf ("enter\n");
-	while (b < nb)
+	while (cpy[y])
 	{
-		ponderer(cpy[b], size);
-		b++;
+		ponderer(cpy[y], size);
+		y++;
 	}
-	b = 0;
+	y = 0;
 	while (tab == NULL && cpy[y])
 	{
 		tab = fill_tetri(cpy, size, y, b);
