@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:48:11 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/21 20:23:43 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/05 18:01:52 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ponderer(t_list *t, int size)
 		if (t->newline == 1)
 			i += (size - 4);
 		t->index += i;
+		printf("%i %i newline: %i, pos: %i\n", (t)->c, (t)->index, (t)->newline, (t)->s_pos);
 		t = t->next;
 	}
 }
@@ -46,13 +47,9 @@ int		placer(t_list *t, char *str, int b)
 	t_list	*bus;
 
 	bus = t;
-	if (!str[b])
-		return (2);
-	if (ft_strchr(str, bus->c) != NULL)
-		return (0);
 	while (bus)
 	{
-		if(str[b + bus->index] != '.' || !str[b + bus->index])
+		if (str[b + bus->index] != '.')
 			return (0);
 		bus = bus->next;
 	}
@@ -62,39 +59,27 @@ int		placer(t_list *t, char *str, int b)
 		str[b + bus->index] = bus->c;
 		bus = bus->next;
 	}
-	//printf("%c placee \n", bus->c);
 	return (1);
 }
 
-char	*fill_tetri(t_list **t, int size, int y, int b)
+int		fill_tetri(t_list **t, char *s, int y, int b)
 {
-	char	*s;
 	int		i;
 	int		vld;
 
-	s = blank_tab(size, 0, 0, 0);
 	i = 0;
-	vld = 0;
-	printf("Iter avec size %i, char de depart %c, case de depart %i \n", size, t[y]->c, b);
-	while(t[i])
+	if (!t[y])
+		return (1);
+	else if (!s[b])
+		return (0);
+	else
 	{
 		vld = placer(t[y], s, b);
-		if (vld == 0 && t[y + 1])
-			y++;
-		else if (vld == 0 && !t[y + 1])
-		{
-			y = 0;
-			b++;
-		}
-		else if (vld == 1) /* piece placee */
-		{
-			i++;
-			b = 0;
-			y = 0;
-		}
-		else if (vld == 2)
-			return (NULL);
+		printf("Iter char de depart %c, case de depart %i \n", t[y]->c, b);
+		if (vld == 0)
+			return (fill_tetri(t, s, y, b + 1));
+		else if (vld == 1)
+			return (fill_tetri(t, s, y + 1, 0));
 	}
-	printf("%s", s);
-	return(s);
+	return (0);
 }

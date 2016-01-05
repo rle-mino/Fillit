@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/21 19:41:24 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/05 16:39:53 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+# define DEBUG printf("%d - %s - %s", __LINE__, __func__, __FILE__);
 
 typedef struct		s_list
 {
@@ -36,7 +38,7 @@ char				*file_to_line(size_t size, int file);
 int					gridchecker(char *str, int i, int x, int y);
 int					linkchecker(char *str, int i, int nb);
 int					poschecker(char *str, size_t i, int x, int y);
-void				fillit(t_list **pieces, int nb, char *str, int size);
+char				*fillit(t_list **pieces, int nb, char *str, int size);
 int					minsize(char *str);
 char				**twod(int i);
 void				free_twod(char **tab);
@@ -47,7 +49,7 @@ void				fillblank(char *tab, int size);
 char				*blank_tab(int size, int i, int x, int y);
 void				s_fill(char *str, int nb, t_list **blank, int i);
 t_list				**blanklist(int nb);
-char				*fill_tetri(t_list **t, int size, int nb, int x);
+int					fill_tetri(t_list **t, char *s, int nb, int x);
 t_list				**list_it(char *str, int nb);
 void				ponderer(t_list *t, int size);
 

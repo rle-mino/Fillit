@@ -6,13 +6,35 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 09:44:41 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/21 20:11:02 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/05 17:43:32 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft.h"
+/*
+void		clean(t_list **cpy, char *tab, int b, int nb)
+{
+	int		i;
+	int		x;
 
+	x = nb - 1;
+	while(b > 0)
+	{
+		i = ft_strlen(tab) - 1; 
+		while (tab[i])
+		{
+			if(tab[i] == cpy[x]->c)
+				tab[i] = '.';
+			i--;
+		}
+		x--;
+		b--;
+	}
+}
+
+	while(ft_strchr(tab, cpy[i]->c) != NULL)
+		i++;*/
 t_list		**list_it(char *str, int nb)
 {
 	t_list	**pieces;
@@ -22,7 +44,7 @@ t_list		**list_it(char *str, int nb)
 	return (pieces);
 }
 
-void		fillit(t_list **pieces, int nb, char *str, int size)
+char		*fillit(t_list **pieces, int nb, char *str, int size)
 {
 	char	*tab;
 	int		b;
@@ -30,30 +52,34 @@ void		fillit(t_list **pieces, int nb, char *str, int size)
 	int		y;
 
 	y = 0;
-	b = 0;
+	b = 1;
 	cpy = list_it(str, nb);
-	tab = NULL;
-		printf ("enter\n");
+	tab = blank_tab(size, 0, 0, 0);
+	printf ("enter\n");
 	while (cpy[y])
 	{
 		ponderer(cpy[y], size);
 		y++;
 	}
-	y = 0;
-	while (tab == NULL && cpy[y])
+	if (fill_tetri(cpy, tab, 0, 0) == 0)
+		return (fillit(pieces, nb, str, size + 1));
+	else
+		printf("%s \n", tab);
+		return (tab);
+}
+	/*while (tab == NULL && b <= (size + 1) * size)
 	{
 		tab = fill_tetri(cpy, size, y, b);
-		if (b < (size + 1) * size)
-			b++;
-		else
-		{
-			b = 0;
-			y++;
-		}
+		b++;
+	}*/
+	//if ((tab = fill_tetri(cpy, size, 0, b)) == NULL)
+	/*y = fill_tetri(cpy, tab, 0, 0); // 7
+	if (y  < nb)
+	{
+		clean(cpy, tab, b, nb);
 	}
-	if (tab == NULL)
-		fillit(pieces, nb, str, size + 1);
-}
+*/
+		//fillit(pieces, nb, str, size + 1);
 		//	fill_tetri(tab, pieces, size, 0);
 
 	//	if ((drop(str, tab, size)) == 0)
