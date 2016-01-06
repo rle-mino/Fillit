@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/05 16:39:53 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 17:57:11 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include "libft.h"
 
 # define DEBUG printf("%d - %s - %s", __LINE__, __func__, __FILE__);
 

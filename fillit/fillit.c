@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 09:44:41 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/01/05 17:43:32 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 17:52:29 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,10 @@ t_list		**list_it(char *str, int nb)
 char		*fillit(t_list **pieces, int nb, char *str, int size)
 {
 	char	*tab;
-	int		b;
 	t_list	**cpy;
 	int		y;
 
 	y = 0;
-	b = 1;
 	cpy = list_it(str, nb);
 	tab = blank_tab(size, 0, 0, 0);
 	printf ("enter\n");
@@ -64,7 +62,6 @@ char		*fillit(t_list **pieces, int nb, char *str, int size)
 	if (fill_tetri(cpy, tab, 0, 0) == 0)
 		return (fillit(pieces, nb, str, size + 1));
 	else
-		printf("%s \n", tab);
 		return (tab);
 }
 	/*while (tab == NULL && b <= (size + 1) * size)
