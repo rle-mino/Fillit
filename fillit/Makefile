@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2015/12/16 14:44:27 by mdiarra          ###   ########.fr        #
+#    Updated: 2016/01/06 18:33:57 by mdiarra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ LIB =		libft.a
 all : $(NAME)
 
 $(NAME):
-	gcc -o $(NAME) $(SRC) $(LIB)
+	gcc -Wall -Wextra -Werror -o $(NAME) $(SRC) $(LIB)
 
 test: re
 	rm -rf sample.fillit

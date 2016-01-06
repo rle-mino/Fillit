@@ -6,14 +6,14 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:26:53 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 16:40:33 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 18:36:50 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft.h"
 
-int		poschecker(char *str, size_t i, int x, int y)
+int		poschecker(char *str, size_t i, int y)
 {
 	int	nb;
 

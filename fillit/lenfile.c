@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:22:53 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/09 17:51:07 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/01/06 18:53:44 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t	lenfile(int fd)
 	char	*buf;
 	size_t	size;
 
+	red = 1;
 	size = 0;
 	buf = ft_strnew(1);
 	while (red)
