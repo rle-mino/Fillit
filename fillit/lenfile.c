@@ -6,12 +6,11 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:22:53 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/01/06 18:53:44 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 19:47:28 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 size_t	lenfile(int fd)
 {

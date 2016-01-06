@@ -6,12 +6,11 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:24:16 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/21 18:59:22 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 19:55:04 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 t_list		*lstnew(int pos)
 {
@@ -55,13 +54,11 @@ void		tabfill(t_list *blank, int x, char ch)
 	}
 	(blank)->c = ch;
 	(blank)->index = x;
-	//(blank)->newline = newline;
-
 	if (((blank)->index) == ((prev)->index + 1) || (blank)->s_pos == 1)
 		(blank)->newline = 0;
 	else
 		(blank)->newline = 1;
-	printf("%i %i newline: %i, pos: %i\n", (blank)->c, (blank)->index, (blank)->newline, (blank)->s_pos);
+	printf("%i idx: %i, newline = %i \n", (blank)->c, (blank)->index, (blank)->newline);
 }
 
 t_list		**blanklist(int nb)
@@ -77,7 +74,7 @@ t_list		**blanklist(int nb)
 		blank[i] = lst_add_n(4);
 		i++;
 	}
-	return(blank);
+	return (blank);
 }
 
 void		s_fill(char *str, int nb, t_list **blank, int i)

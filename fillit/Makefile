@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/09 17:30:36 by rle-mino          #+#    #+#              #
-#    Updated: 2016/01/06 18:33:57 by mdiarra          ###   ########.fr        #
+#    Updated: 2016/01/06 19:46:15 by mdiarra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ SRC = 		main.c			\
 			gridchecker.c	\
 			lenfile.c		\
 			linkchecker.c	\
-			openfile.c		\
 			poschecker.c	\
 			precheck.c		\
 			wrongchar.c		\

@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 14:22:39 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/08 18:49:47 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 19:44:38 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t	lenfile(int fd)
 	size_t	size;
 
 	size = 0;
+	red = 1;
 	buf = ft_strnew(1);
 	while (red)
 	{
@@ -47,6 +48,7 @@ char	*file_to_line(size_t size, int file)
 	char	*line;
 	int		red;
 
+	red = 1;
 	line = ft_strnew(size);
 	while (red)
 		red = read(file, line, size);
@@ -60,6 +62,8 @@ int		main(int argc, char **argv)
 	char	*line;
 	size_t	linesize;
 
+	if (argc != 2)
+		return (0);
 	fd = openfile(argv[1]);
 	if (fd < 1)
 		return (0);

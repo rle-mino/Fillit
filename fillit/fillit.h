@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/06 18:39:01 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/06 19:23:49 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <stdio.h>
 # include "libft.h"
 
-# define DEBUG printf("%d - %s - %s", __LINE__, __func__, __FILE__);
-
+# define DEBUG printf("%d - %s - %s \n", __LINE__, __func__, __FILE__);
+# define ERROR {ft_putstr("error\n");return (0);}
 typedef struct		s_list
 {
 	int				s_pos;
@@ -38,7 +38,7 @@ int					precheck(char *str);
 char				*file_to_line(size_t size, int file);
 int					gridchecker(char *str, int i, int x, int y);
 int					linkchecker(char *str, int i, int nb);
-int					poschecker(char *str, size_t i, int y);
+int					poschecker(char *str, size_t i, int nb, int y);
 char				*fillit(t_list **pieces, int nb, char *str, int size);
 int					minsize(char *str);
 char				**twod(int i);
