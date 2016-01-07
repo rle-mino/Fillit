@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:24:16 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/07 17:07:17 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:13:38 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_list		*lst_add_n(int n)
 	t_list	*elem;
 	t_list	*start;
 
-	//elem = NULL;
 	start = NULL;
 	while(n > 0)
 	{
