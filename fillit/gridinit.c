@@ -6,11 +6,10 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 14:22:39 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/06 19:44:38 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:08:24 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 int		openfile(const char *path)

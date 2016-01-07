@@ -6,11 +6,10 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:48:11 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/06 20:02:34 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:07:14 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 void	cleargrid(char *str, char c)

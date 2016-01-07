@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:24:16 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/06 19:55:04 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:07:17 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_list		*lst_add_n(int n)
 	t_list	*elem;
 	t_list	*start;
 
+	//elem = NULL;
 	start = NULL;
 	while(n > 0)
 	{
@@ -58,7 +59,6 @@ void		tabfill(t_list *blank, int x, char ch)
 		(blank)->newline = 0;
 	else
 		(blank)->newline = 1;
-	printf("%i idx: %i, newline = %i \n", (blank)->c, (blank)->index, (blank)->newline);
 }
 
 t_list		**blanklist(int nb)
@@ -67,7 +67,7 @@ t_list		**blanklist(int nb)
 	int		i;
 
 	i = 0;
-	blank = (t_list**)ft_memalloc(sizeof(t_list *) * nb);
+	blank = (t_list**)ft_memalloc(sizeof(t_list *) * (nb + 1));
 	while (i < nb)
 	{
 		blank[i] = (t_list *)ft_memalloc(sizeof(t_list) * 4);

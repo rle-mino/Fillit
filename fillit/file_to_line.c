@@ -6,12 +6,11 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:18:35 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 17:57:50 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:07:20 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 char	*file_to_line(size_t size, int file)
 {

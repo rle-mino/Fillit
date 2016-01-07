@@ -6,12 +6,11 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 13:18:04 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/06 19:14:26 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:07:02 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"fillit.h"
-#include	"libft.h"
 
 void		fillblank(char *tab, int size)
 {

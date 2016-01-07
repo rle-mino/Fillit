@@ -6,11 +6,10 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 13:25:03 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/11 18:23:39 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 17:08:03 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 int			nb_piece(char *str)
