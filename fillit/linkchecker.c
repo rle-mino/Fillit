@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:25:33 by rle-mino          #+#    #+#             */
-/*   Updated: 2015/12/10 16:40:14 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:07:49 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ int		linkchecker(char *str, int i, int nb)
 			return (0);
 		}
 	}
-//	else if (nb > 4)
-//		return (0);
 	return (1);
 }

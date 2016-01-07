@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:16:16 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/01/07 17:17:12 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:08:07 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int		main(int argc, char **argv)
 
 	fd = open(argv[1], O_RDONLY);
 	if (argc != 2 || fd < 3)
-		ERROR
+		ERROR;
 	linesize = lenfile(fd);
 	fd = open(argv[1], O_RDONLY);
 	line = file_to_line(linesize, fd);
 	if (precheck(line) == 0)
-		ERROR
+		ERROR;
 	if ((fd = nb_piece(line)) > 26)
-		ERROR
+		ERROR;
 	lst = list_it(line, fd);
 	ft_putstr(fillit(lst, fd, line, 2));
 }

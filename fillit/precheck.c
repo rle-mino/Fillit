@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:29:29 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/01/07 17:05:06 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:10:00 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		linecount(char *str)
 		return (0);
 	while (str[i])
 	{
-		if(str[i] == '\n')
+		if (str[i] == '\n')
 			j++;
 		i++;
 	}
@@ -37,6 +37,7 @@ int		linecount(char *str)
 int		precheck(char *str)
 {
 	int	ret;
+
 	if (linecount(str) == 0)
 		return (0);
 	ret = gridchecker(str, 0, 0, 0);

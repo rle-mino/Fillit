@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2015/12/11 18:21:26 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:11:12 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,5 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-//t_list				*ft_lstnew(void const *content, size_t content_size);
-//void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-//void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-//void				ft_lstadd(t_list **alst, t_list *new);
-//void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-//t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif

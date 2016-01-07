@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:48:11 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/07 17:07:14 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:08:47 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	cleargrid(char *str, char c)
 		i++;
 	}
 }
-
 
 void	ponderer(t_list *t, int size)
 {
@@ -56,9 +55,10 @@ int		checker(t_list *t, char *str, int b)
 	return (1);
 }
 
-void		placer(t_list *t, char *str, int b)
+void	placer(t_list *t, char *str, int b)
 {
 	t_list	*bus;
+
 	bus = t;
 	while (bus)
 	{
@@ -67,7 +67,7 @@ void		placer(t_list *t, char *str, int b)
 	}
 }
 
-int			fill_tetri(t_list **t, char *s, int y, int b)
+int		fill_tetri(t_list **t, char *s, int y, int b)
 {
 	if (!t[y])
 		return (1);
@@ -82,6 +82,6 @@ int			fill_tetri(t_list **t, char *s, int y, int b)
 	{
 		return (1);
 	}
-	cleargrid (s, t[y]->c);
+	cleargrid(s, t[y]->c);
 	return (fill_tetri(t, s, y, b + 1));
 }

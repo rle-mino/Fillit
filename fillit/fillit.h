@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                            :+:      :+:    :+:   */
+/*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:58:53 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/06 19:23:49 by mdiarra          ###   ########.fr       */
+/*   Created: 2016/01/07 18:10:43 by mdiarra           #+#    #+#             */
+/*   Updated: 2016/01/07 18:14:20 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <stdio.h>
 # include "libft.h"
 
-# define DEBUG printf("%d - %s - %s \n", __LINE__, __func__, __FILE__);
 # define ERROR {ft_putstr("error\n");return (0);}
+
 typedef struct		s_list
 {
 	int				s_pos;
@@ -31,7 +31,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-int					openfile(const char *path);
 size_t				lenfile(int fd);
 int					wrongchar(char c);
 int					precheck(char *str);
@@ -40,13 +39,7 @@ int					gridchecker(char *str, int i, int x, int y);
 int					linkchecker(char *str, int i, int nb);
 int					poschecker(char *str, size_t i, int nb, int y);
 char				*fillit(t_list **pieces, int nb, char *str, int size);
-int					minsize(char *str);
-char				**twod(int i);
-void				free_twod(char **tab);
-int					f_check(char *str, char **tab, int size, int nb);
-char				**drop(char *str, char **tab, int nb);
 int					nb_piece(char *str);
-void				fillblank(char *tab, int size);
 char				*blank_tab(int size, int i, int x, int y);
 void				s_fill(char *str, int nb, t_list **blank, int i);
 t_list				**blanklist(int nb);

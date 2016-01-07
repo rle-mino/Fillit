@@ -6,7 +6,7 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:24:16 by mdiarra           #+#    #+#             */
-/*   Updated: 2016/01/07 17:13:38 by mdiarra          ###   ########.fr       */
+/*   Updated: 2016/01/07 18:06:00 by mdiarra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@ t_list		*lstnew(int pos)
 	(start)->c = 0;
 	(start)->index = 0;
 	(start)->newline = 0;
-	return(start);
+	return (start);
 }
+
 t_list		*lst_add_n(int n)
 {
 	t_list	*elem;
 	t_list	*start;
 
 	start = NULL;
-	while(n > 0)
+	while (n > 0)
 	{
 		elem = lstnew(n);
 		elem->next = start;
@@ -45,6 +46,7 @@ void		tabfill(t_list *blank, int x, char ch)
 {
 	t_list	*prev;
 	int		i;
+
 	i = 0;
 	prev = blank;
 	while ((blank)->c == ch)
@@ -92,7 +94,7 @@ void		s_fill(char *str, int nb, t_list **blank, int i)
 					tabfill(blank[str[0] - 65], x, str[x]);
 					i++;
 				}
-					x++;
+				x++;
 			}
 			i = 0;
 			nb--;
